@@ -7,7 +7,7 @@
 - [How it works](#how-it-works)
 - [Contributing](#contributing)
 - [Creators](#creators)
-- [Thanks](#thanks)
+- [Thanks](#special-thanks)
 - [Copyright and license](#copyright-and-license)
 
 
@@ -62,7 +62,7 @@ Feel free to contribue in any way you can! I'm very open to suggestions and idea
 
 - <https://github.com/MelonSpeedruns/>
 
-## Thanks
+## Special Thanks
 
 Some special thanks to the people that helped with the Randomizer!
 
