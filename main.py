@@ -200,7 +200,7 @@ def create_corrupted_aoc_file(file_path):
 def create_version_file(file_path):
     os.makedirs(get_dir_path(file_path), exist_ok=True)
     with open(file_path, 'w') as f:
-        f.write("Rando 0.0.1")
+        f.write("Rando 1.0.0")
 
 
 def create_rules_file():
@@ -356,9 +356,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.setupUi(self)
 
+        self.setFixedSize(800, 380)
+
         icon_dir = getattr(sys, '_MEIPASS', "icon.png")
         self.setWindowIcon(QtGui.QIcon(icon_dir))
-        self.setFixedSize(800, 380)
 
         self.settings_dict = {"baseFolder": '',
                               "updateFolder": '',
@@ -389,6 +390,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.browseButton4.clicked.connect(lambda: self.browse_folder('Select the Cemu "graphicPacks" folder', self.graphicPacksFolder, "graphicPacksFolder"))
 
         self.pushButton.clicked.connect(lambda: self.randomization())
+
+        self.show()
 
     def browse_folder(self, text, text_box, settings_value):
         dialog = QFileDialog()
@@ -491,5 +494,4 @@ if __name__ == "__main__":
 
     app = QApplication([])
     window = MainWindow()
-    window.show()
     sys.exit(app.exec_())

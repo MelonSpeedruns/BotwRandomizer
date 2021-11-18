@@ -2,5 +2,5 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = BOTW Randomizer
 path = "The Legend of Zelda: Breath of the Wild/BOTW Randomizer"
-description = Rando
+description = Randomizer Version 1.0.0|You need to enable this to play the Randomizer!
 version = 4
