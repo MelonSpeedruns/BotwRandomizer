@@ -1,3 +1,5 @@
+# BOTW Randomizer Mod
+
 ## Table of contents
 
 - [Quick start](#quick-start)
