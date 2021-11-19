@@ -84,13 +84,13 @@ def split_on_empty_lines(s):
 
 
 def remove_from_list(new_value, objects):
+    if "Mannequin_" in new_value:
+        objects.replace(new_value + "\n", "")
+        return
     if "Armor_" in new_value:
         objects.replace(new_value + "\n", "")
         return
     if "Horse" in new_value:
-        objects.replace(new_value + "\n", "")
-        return
-    if "Mannequin_" in new_value:
         objects.replace(new_value + "\n", "")
         return
 
