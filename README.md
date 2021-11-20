@@ -42,6 +42,8 @@ Here's what's randomized with the latest version of the Randomizer:
 
 ## How it works
 
+Every time to decide to randomize the game, it creates a new graphic pack, and generates a new seed. This means that every object and item will always be the same until you do a new seed.
+
 On top of everything above being randomized, the Randomizer changes slightly the goal of the game.
 
 First of all, to enter Ganon, you need the Master Sword. This makes it so you need at least 13 hearts to beat the game.
