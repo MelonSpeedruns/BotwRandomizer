@@ -84,6 +84,8 @@ Some special thanks to the people that helped with the Randomizer!
 *For helping out with design ideas, beta testing, advertising and general support!*
 - <https://www.twitch.tv/tLeves/>
 
+If I forgot your name, let me know and I'll add you!
+
 ## Copyright and license
 
 The code is released under the [MIT License](https://github.com/MelonSpeedruns/BotwRandomizer/blob/main/LICENSE).
