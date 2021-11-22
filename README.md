@@ -15,6 +15,8 @@
 
 Head over to the [Releases](https://github.com/MelonSpeedruns/BotwRandomizer/releases) section and download the latest built .exe file. Run it, configure it, and enjoy your randomized game!
 
+If you have any questions about the Randomizer, please ask them in our [Official Discord Server](https://discord.gg/vPPsreP4Ng).
+
 The BOTW Randomizer expects you to have an extracted copy of the Wii U version of Breath of the Wild, including the following:
 - The base game
 - The latest update (1.5.0)
