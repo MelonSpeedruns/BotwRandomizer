@@ -13,16 +13,16 @@
 
 ## Quick start
 
-Head over to the [Releases](https://github.com/MelonSpeedruns/BotwRandomizer/releases) section and download the latest built .exe file. Run it, configure it, and enjoy your randomized game!
+Head over to the [Releases](https://github.com/MelonSpeedruns/BotwRandomizer/releases) section and download the latest built .exe file. Run it and configure it. Once the randomization process starts, it will create a new Cemu graphic pack in the proper folder. Make sure to enable it in Cemu's graphic packs settings!
 
 If you have any questions about the Randomizer, please ask them in our [Official Discord Server](https://discord.gg/vPPsreP4Ng).
 
-The BOTW Randomizer expects you to have an extracted copy of the Wii U version of Breath of the Wild, including the following:
+The BOTW Randomizer expects you to have an extracted copy of the Wii U version of BOTW, including the following:
 - The base game
 - The latest update (1.5.0)
 - The 2 DLCs
 
-It is also recommended (for now) to use Cemu to play the Randomizer, as it wasn't tested on an actual Wii U console.
+It is also recommended (for now) to use Cemu to play the Randomizer, as it wasn't tested on an actual Wii U console yet.
 
 ## What's randomized
 
