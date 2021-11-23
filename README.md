@@ -48,7 +48,9 @@ Every time to decide to randomize the game, it creates a new graphic pack, and g
 
 On top of everything above being randomized, the Randomizer changes slightly the goal of the game.
 
-First of all, to enter Ganon, you need the Master Sword. This makes it so you need at least 13 hearts to beat the game.
+First of all, the Paraglider is randomized within the Great Plateau in a random chest. (Monster camp chests don't count.)
+
+Next, to enter Ganon, you need the Master Sword. This makes it so you need at least 13 hearts to beat the game.
 
 Secondly, completing shrines doesn't give you Spirit Orbs anymore, so how do you get more hearts?
 
