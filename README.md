@@ -65,7 +65,7 @@ PS: You start the game with the Camera rune, which allows you to scan a treasure
 
 Feel free to contribue in any way you can! I'm very open to suggestions and ideas, as long as they are explained carefully and in detail. Thanks for helping out making this rando a better piece of software!
 
-## Known Bugs (Will be patched)
+## Known Bugs
 
  - Time doesn't advance since the old man cutscene at the tower is skipped.
  - Rarely, enemy camps are empty.
