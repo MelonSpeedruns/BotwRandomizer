@@ -5,6 +5,7 @@
 - [Quick start](#quick-start)
 - [What's randomized](#whats-randomized)
 - [How it works](#how-it-works)
+- [Known Bugs](#known-bugs)
 - [Contributing](#contributing)
 - [Creators](#creators)
 - [Thanks](#special-thanks)
@@ -59,6 +60,16 @@ The answer is simple! Spirit Orbs can now be found throughout Hyrule within it's
 There are more Spirit Orbs placed in chests than you need. This is done so runs are shorter and so they don't last for days.
 
 PS: You start the game with the Camera rune, which allows you to scan a treasure chest, and use the Sheikah Sensor to easily find all the other ones!
+
+## Contributing
+
+Feel free to contribue in any way you can! I'm very open to suggestions and ideas, as long as they are explained carefully and in detail. Thanks for helping out making this rando a better piece of software!
+
+## Known Bugs (Will be patched)
+
+ - Time doesn't advance since the old man cutscene at the tower is skipped.
+ - Rarely, enemy camps are empty.
+ - And plenty more I don't know about! :)
 
 ## Contributing
 
