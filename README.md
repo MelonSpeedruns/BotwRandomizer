@@ -55,15 +55,11 @@ Next, to enter Ganon, you need the Master Sword. This makes it so you need at le
 
 Secondly, completing shrines doesn't give you Spirit Orbs anymore, so how do you get more hearts?
 
-The answer is simple! Spirit Orbs can now be found throughout Hyrule within it's numerous chests.
+The answer is simple! Spirit Orbs can now be found throughout Hyrule within its numerous chests.
 
 There are more Spirit Orbs placed in chests than you need. This is done so runs are shorter and so they don't last for days.
 
 PS: You start the game with the Camera rune, which allows you to scan a treasure chest, and use the Sheikah Sensor to easily find all the other ones!
-
-## Contributing
-
-Feel free to contribue in any way you can! I'm very open to suggestions and ideas, as long as they are explained carefully and in detail. Thanks for helping out making this rando a better piece of software!
 
 ## Known Bugs
 
