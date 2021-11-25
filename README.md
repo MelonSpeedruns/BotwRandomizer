@@ -69,7 +69,7 @@ PS: You start the game with the Camera rune, which allows you to scan a treasure
 
 ## Contributing
 
-Feel free to contribue in any way you can! I'm very open to suggestions and ideas, as long as they are explained carefully and in detail. Thanks for helping out making this rando a better piece of software!
+Feel free to contribute in any way you can! I'm very open to suggestions and ideas, as long as they are explained carefully and in detail. Thanks for helping out making this rando a better piece of software!
 
 ## Creators
 
