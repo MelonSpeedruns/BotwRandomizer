@@ -1,7 +1,12 @@
+import hashlib
 import json
 import shutil
 import os
 import glob
+import string
+import uuid
+from datetime import time, datetime
+
 import pymsgbox
 
 import oead
@@ -171,9 +176,9 @@ def randomize_files(map_files_path):
                 .replace(".s", ".") \
                 .replace("/aoc", "Aoc")
 
-            files_modified[file] = len(new_byml_binary) + 0x200
-
         new_byml = oead.yaz0.compress(new_byml_binary)
+        new_size = oead.yaz0.get_header(new_byml).uncompressed_size
+        files_modified[file] = new_size + 0x200
 
         with open(map_file, "wb") as f:
             f.write(new_byml)
@@ -307,9 +312,10 @@ def randomize_shrines():
 
                     new_byml_binary = oead.byml.to_binary(dungeon_data, True, 2)
 
-                    files_modified[file_name] = len(new_byml_binary) + 0x200
-
                     new_byml = oead.yaz0.compress(new_byml_binary)
+                    new_size = oead.yaz0.get_header(new_byml).uncompressed_size
+
+                    files_modified[file_name.replace('.smubin', '.mubin')] = new_size + 0x200
 
                     writer.delete_file(file_name)
                     writer.add_file(file_name, new_byml)
@@ -348,6 +354,7 @@ def randomize(log_box):
     rstb_file()
 
     log_to_console(log_box, "Randomization Completed!")
+    pymsgbox.alert("Make sure to restart Cemu and to enable the graphic pack before playing!", "Randomization Completed!")
 
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -366,6 +373,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                               "dlcFolder": '',
                               "graphicPacksFolder": '',
                               }
+
+        self.random_seed = string.ascii_uppercase + string.digits
+        self.random_seed = ''.join(random.sample(self.random_seed, 10))
+        self.graphicPacksFolder_2.setText(str(self.random_seed))
 
         if not os.path.exists("settings.ini"):
             with open("settings.ini", "w+") as json_file:
@@ -422,6 +433,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         global updatePath
         global dlcPath
         global graphicPacksPath
+
+        random.seed(hash(self.random_seed))
 
         basePath = self.baseFolder.text()
         updatePath = self.updateFolder.text()
