@@ -161,7 +161,7 @@ def randomize_files(map_files_path):
                     if map_info["Objs"][map_index]["UnitConfigName"].startswith("Npc_King_"):
                         map_info["Objs"][map_index] = None
 
-                if map_info["Objs"][map_index] is not None and "HashId" in map_info["Objs"][map_index]:
+                if map_info["Objs"][map_index] != None and "HashId" in map_info["Objs"][map_index]:
                     hash_id = map_info["Objs"][map_index]["HashId"]
 
                     if str(hex(hash_id)) in events_to_disable_list:
@@ -392,7 +392,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.pushButton.setEnabled(False)
 
-        if self.baseFolder.text() is not "" and self.updateFolder.text() is not "" and self.dlcFolder.text() is not "" and self.graphicPacksFolder.text() is not "":
+        if self.baseFolder.text() != "" and self.updateFolder.text() != "" and self.dlcFolder.text() != "" and self.graphicPacksFolder.text() != "":
             self.pushButton.setEnabled(True)
 
         self.browseButton1.clicked.connect(lambda: self.browse_folder('Select the base BOTW "content" folder', self.baseFolder, "baseFolder"))
@@ -423,7 +423,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         with open("settings.ini", "w+") as json_file:
             json.dump(self.settings_dict, json_file)
 
-        if self.baseFolder.text() is not "" and self.updateFolder.text() is not "" and self.dlcFolder.text() is not "" and self.graphicPacksFolder.text() is not "":
+        if self.baseFolder.text() != "" and self.updateFolder.text() != "" and self.dlcFolder.text() != "" and self.graphicPacksFolder.text() != "":
             self.pushButton.setEnabled(True)
         else:
             self.pushButton.setEnabled(False)

@@ -65,6 +65,12 @@ PS: You start the game with the Camera rune, which allows you to scan a treasure
 
 Feel free to contribute in any way you can! I'm very open to suggestions and ideas, as long as they are explained carefully and in detail. Thanks for helping out making this rando a better piece of software!
 
+### Dependencies
+You need to have [Python3](https://www.python.org/downloads/) installed. After that, make sure you have `pymsgbox`, `oead` and `PyQt5` installed as well. These can be installed with:
+```
+pip install pymsgbox oead PyQt5
+```
+
 ## Known Bugs
 
  - Time doesn't advance since the old man cutscene at the tower is skipped.
