@@ -73,7 +73,6 @@ pip install pymsgbox oead PyQt5
 
 ## Known Bugs
 
- - Time doesn't advance since the old man cutscene at the tower is skipped.
  - Rarely, enemy camps are empty.
  - And plenty more I don't know about! :)
 
