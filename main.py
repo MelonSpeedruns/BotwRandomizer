@@ -56,7 +56,7 @@ def get_map_files_from_dir(directory, extension):
     map_files = []
     for entry in glob.iglob(f"{directory}/**/*.{extension}", recursive=True):
         if entry.find("-") != -1:
-            map_files.append(entry.replace('/', '\\'))
+            map_files.append(os.path.normpath(entry))
 
     return map_files
 
@@ -191,7 +191,7 @@ def copy_file(src, dst):
 def copy_map_files(src, extension):
     all_files = get_map_files_from_dir(src, extension)
     for map_file in all_files:
-        new_map_location = map_file.replace(dlcMainFieldPath.replace('/', '\\'), graphicPacksMainFieldPath.replace('/', '\\'))
+        new_map_location = map_file.replace(os.path.normpath(dlcMainFieldPath), os.path.normpath(graphicPacksMainFieldPath))
         os.makedirs(get_dir_path(new_map_location), exist_ok=True)
         shutil.copyfile(map_file, new_map_location)
 
