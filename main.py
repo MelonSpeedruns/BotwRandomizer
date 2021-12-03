@@ -169,11 +169,10 @@ def randomize_files(map_files_path):
 
             new_byml_binary = oead.byml.to_binary(map_info, True, 2)
 
-            file = map_file.replace('\\', '/') \
-                .replace(graphicPacksPath, "") \
-                .replace("content\\", "") \
+            file = map_file.replace(graphicPacksPath, "") \
+                .replace("content/", "") \
                 .replace(".s", ".") \
-                .replace("/aoc", "Aoc")
+                .replace("aoc/", "Aoc/")
 
         new_byml = oead.yaz0.compress(new_byml_binary)
         new_size = oead.yaz0.get_header(new_byml).uncompressed_size
@@ -448,10 +447,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         dlcMainFieldPath = dlcPath + "/0010/Map/MainField"
 
         global graphicPacksMainFieldPath
-        graphicPacksMainFieldPath = graphicPacksPath + "/aoc/0010/Map/MainField"
+        graphicPacksMainFieldPath = graphicPacksPath + "/Aoc/0010/Map/MainField"
 
         global corruptedAocMainFieldPath
-        corruptedAocMainFieldPath = graphicPacksPath + "/aoc/0010/Pack/AocMainField.pack"
+        corruptedAocMainFieldPath = graphicPacksPath + "/Aoc/0010/Pack/AocMainField.pack"
 
         global updateRstbPath
         updateRstbPath = updatePath + "/System/Resource/ResourceSizeTable.product.srsizetable"
@@ -484,7 +483,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         graphicPacksPackPath = graphicPacksPath + "/content/Pack/"
 
         global graphicPacksDlcPackPath
-        graphicPacksDlcPackPath = graphicPacksPath + "/aoc/0010/Pack/"
+        graphicPacksDlcPackPath = graphicPacksPath + "/Aoc/0010/Pack/"
 
         global updateEventPath
         updateEventPath = updatePath + "/Event/"
