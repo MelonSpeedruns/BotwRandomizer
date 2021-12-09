@@ -82,6 +82,10 @@ pip install pymsgbox oead PyQt5
 
 - <https://github.com/MelonSpeedruns/>
 
+**Miepee**
+
+- <https://github.com/miepee/>
+
 ## Special Thanks
 
 Toolbox.Library is available as part of Switch Toolbox made by KillzXGaming!
