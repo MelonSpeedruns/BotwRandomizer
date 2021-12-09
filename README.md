@@ -84,6 +84,9 @@ pip install pymsgbox oead PyQt5
 
 ## Special Thanks
 
+Toolbox.Library is available as part of Switch Toolbox made by KillzXGaming!
+Here's a link to it's source code: https://github.com/KillzXGaming/Switch-Toolbox
+
 Some special thanks to the people that helped with the Randomizer!
 
 **Linkus7**
@@ -106,6 +109,6 @@ If I forgot your name, let me know and I'll add you!
 
 ## Copyright and license
 
-The code is released under the [MIT License](https://github.com/MelonSpeedruns/BotwRandomizer/blob/main/LICENSE).
+The code is released under the [GPL-3.0 License](https://github.com/MelonSpeedruns/BotwRandomizer/blob/main/LICENSE).
 
 Enjoy the rando! :metal:

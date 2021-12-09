@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BotwRando", "BotwRando\BotwRando.csproj", "{96F47398-4ADB-4E15-9919-13AEDB1E1849}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BotwRandoLib", "BotwRandoLib\BotwRandoLib.csproj", "{955316CE-13B1-4FA3-927A-27FA243CF4EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96F47398-4ADB-4E15-9919-13AEDB1E1849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96F47398-4ADB-4E15-9919-13AEDB1E1849}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96F47398-4ADB-4E15-9919-13AEDB1E1849}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96F47398-4ADB-4E15-9919-13AEDB1E1849}.Release|Any CPU.Build.0 = Release|Any CPU
+		{955316CE-13B1-4FA3-927A-27FA243CF4EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{955316CE-13B1-4FA3-927A-27FA243CF4EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{955316CE-13B1-4FA3-927A-27FA243CF4EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{955316CE-13B1-4FA3-927A-27FA243CF4EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7C31805F-03C9-4A60-A6CA-6D256B7999B6}
+	EndGlobalSection
+EndGlobal
