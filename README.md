@@ -16,6 +16,8 @@
 
 Head over to the [Releases](https://github.com/MelonSpeedruns/BotwRandomizer/releases) section and download the latest built .exe file. Run it and configure it. Once the randomization process starts, it will create a new Cemu graphic pack in the proper folder. Make sure to enable it in Cemu's graphic packs settings!
 
+If the app doesn't launch for you when double clicking it, then you might be missing the latest [.NET Desktop Runtime 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+
 If you have any questions about the Randomizer, please ask them in our [Official Discord Server](https://discord.gg/vPPsreP4Ng).
 
 The BOTW Randomizer expects you to have an extracted copy of the Wii U version of BOTW, including the following:
@@ -66,10 +68,7 @@ PS: You start the game with the Camera rune, which allows you to scan a treasure
 Feel free to contribute in any way you can! I'm very open to suggestions and ideas, as long as they are explained carefully and in detail. Thanks for helping out making this rando a better piece of software!
 
 ### Dependencies
-You need to have [Python3](https://www.python.org/downloads/) installed. After that, make sure you have `pymsgbox`, `oead` and `PyQt5` installed as well. These can be installed with:
-```
-pip install pymsgbox oead PyQt5
-```
+You need to have the [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) installed to build this app in Visual Studio.
 
 ## Known Bugs
 
