@@ -77,36 +77,15 @@ You need to have the [.NET 6.0 SDK](https://dotnet.microsoft.com/en-us/download/
 
 ## Creators
 
-**MelonSpeedruns**
-
-- <https://github.com/MelonSpeedruns/>
-
-**Miepee**
-
-- <https://github.com/miepee/>
+* [MelonSpeedruns](https://github.com/MelonSpeedruns/)
+* [Miepee](https://github.com/miepee/)
 
 ## Special Thanks
 
-Toolbox.Library is available as part of Switch Toolbox made by KillzXGaming!
-Here's a link to it's source code: https://github.com/KillzXGaming/Switch-Toolbox
-
-Some special thanks to the people that helped with the Randomizer!
-
-**Linkus7**
-*For helping out with design, bug hunting, beta testing, advertising and general support!*
-- <https://www.twitch.tv/linkus7/>
-
-**Leoetlino**
-*For answering my dumb Python questions, and being very patient with me!*
-- <https://github.com/leoetlino/>
-
-**LinoYeen**
-*For helping out with design ideas, beta testing, advertising and general support!*
-- <https://www.twitch.tv/linoyeen/>
-
-**tLeves**
-*For helping out with design ideas, beta testing, advertising and general support!*
-- <https://www.twitch.tv/tLeves/>
+* [Linkus7](https://www.twitch.tv/linkus7/) For helping out with design, bug hunting, beta testing, advertising and general support!
+* [Leoetlino](https://github.com/leoetlino/) For answering my dumb Python questions, and being very patient with me!
+* [LinoYeen](https://www.twitch.tv/linoyeen/) For helping out with design ideas, beta testing, advertising and general support!
+* [tLeves](https://www.twitch.tv/tLeves/) For helping out with design ideas, beta testing, advertising and general support!
 
 If I forgot your name, let me know and I'll add you!
 
@@ -114,4 +93,5 @@ If I forgot your name, let me know and I'll add you!
 
 The code is released under the [GPL-3.0 License](https://github.com/MelonSpeedruns/BotwRandomizer/blob/main/LICENSE).
 
-Enjoy the rando! :metal:
+Toolbox.Library is available as part of Switch Toolbox made by KillzXGaming!
+Here's a link to it's source code: https://github.com/KillzXGaming/Switch-Toolbox
