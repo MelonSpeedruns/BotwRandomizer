@@ -11,7 +11,7 @@ namespace BotwRandoLib
 {
     internal class LibHelpers
     {
-        public static List<KeyValuePair<string, int>> rstbFiles = new List<KeyValuePair<string, int>>();
+        public static RSTB rstb = new RSTB();
 
         public static bool CopyMapFiles(string sourcePath, string targetPath)
         {
@@ -51,6 +51,8 @@ namespace BotwRandoLib
 
             // Copy over the rstb file to the graphic pack folder
             File.Copy(updateRstbFile, gfxPackRstbFile);
+
+            rstb.LoadFile(gfxPackRstbFile);
         }
 
         internal static void CopyAndInjectEventFile(byte[] demoFile, string demoName, string updateEventsPath, string gfxPackEventsPath, bool isInBootup = false)
@@ -71,7 +73,9 @@ namespace BotwRandoLib
                 byte[] newBootupData = SARC.PackN(bootupSarcData).Item2;
                 File.WriteAllBytes(gfxPackEventsPath, newBootupData);
 
-                RstbFile(eventPath, demoFile.Length);
+                MemoryStream ms = new MemoryStream(demoFile);
+                RstbFile(eventPath, ms, false);
+                ms.Close();
             }
             else
             {
@@ -100,8 +104,13 @@ namespace BotwRandoLib
                 File.WriteAllBytes(newEventFile, YAZ0.Compress(newSarcData.Item2));
 
                 // Add the modified files to the RSTB
-                RstbFile($"EventFlow/{demoName}.bfevfl", demoFile.Length);
-                RstbFile($"Event/{demoName}.beventpack", newSarcData.Item2.Length);
+                MemoryStream ms = new MemoryStream(demoFile);
+                RstbFile($"EventFlow/{demoName}.bfevfl", ms, false);
+                ms.Close();
+
+                ms = new MemoryStream(newSarcData.Item2);
+                RstbFile($"Event/{demoName}.beventpack", ms, false);
+                ms.Close();
             }
         }
 
@@ -172,14 +181,6 @@ namespace BotwRandoLib
 
         internal static void RstbFiles(string rstbFile)
         {
-            RSTB rstb = new RSTB();
-            rstb.LoadFile(rstbFile);
-
-            foreach (KeyValuePair<string, int> rstbKeys in rstbFiles)
-            {
-                rstb.SetSize(rstbKeys.Key, (uint)rstbKeys.Value);
-            }
-
             FileWriter fw = new FileWriter(rstbFile);
             rstb.Write(fw);
             fw.Close();
@@ -191,13 +192,11 @@ namespace BotwRandoLib
             fs.Close();
 
             File.WriteAllBytes(rstbFile, compressed.ToArray());
-
-            rstbFiles.Clear();
         }
 
-        internal static void RstbFile(string fileName, int fileSize)
+        internal static void RstbFile(string fileName, Stream fileStream, bool isCompressed)
         {
-            rstbFiles.Add(new KeyValuePair<string, int>(fileName, fileSize + 0x200));
+            rstb.SetEntry(fileName, fileStream, isCompressed);
         }
 
         internal static bool CopyShrineFiles(string baseShrinesPath, string dlcShrinesPath, string gfxPackBaseShrinesPath, string gfxPackDlcShrinesPath, ref List<string> dungeonFiles)

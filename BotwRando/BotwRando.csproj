@@ -13,7 +13,7 @@
 
   
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <StartupObject>BotwRando.Program</StartupObject>
   </PropertyGroup>

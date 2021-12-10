@@ -11,21 +11,31 @@
   <ItemGroup>
     <Reference Include="ByamlExt">
       <HintPath>ByamlExt.dll</HintPath>
+      <CopyLocal>True</CopyLocal>
+    </Reference>
+    <Reference Include="CsvHelper">
+      <HintPath>CsvHelper.dll</HintPath>
+      <CopyLocal>True</CopyLocal>
     </Reference>
     <Reference Include="EditorCoreCommon">
       <HintPath>EditorCoreCommon.dll</HintPath>
+      <CopyLocal>True</CopyLocal>
     </Reference>
     <Reference Include="SARCExt">
       <HintPath>SARCExt.dll</HintPath>
+      <CopyLocal>True</CopyLocal>
     </Reference>
     <Reference Include="Syroot.BinaryData">
       <HintPath>Syroot.BinaryData.dll</HintPath>
+      <CopyLocal>True</CopyLocal>
     </Reference>
     <Reference Include="Syroot.Maths">
       <HintPath>Syroot.Maths.dll</HintPath>
+      <CopyLocal>True</CopyLocal>
     </Reference>
     <Reference Include="Toolbox.Library">
       <HintPath>Toolbox.Library.dll</HintPath>
+      <CopyLocal>True</CopyLocal>
     </Reference>
   </ItemGroup>
 
@@ -49,10 +59,13 @@
 
   <ItemGroup>
     <None Update="ByamlExt.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="CsvHelper.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="EditorCoreCommon.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="FirstPlugin.Plg.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -64,16 +77,16 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="SARCExt.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Syroot.BinaryData.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Syroot.Maths.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Toolbox.Library.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

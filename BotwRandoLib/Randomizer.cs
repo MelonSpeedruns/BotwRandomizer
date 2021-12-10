@@ -225,22 +225,12 @@ namespace BotwRandoLib
         {
             // Yaz0 decompress the .smubin file and open it as a Byaml
             byte[] dungeonStaticData = dungeonSarcData.Files[dungeonPath];
-            BymlFileData byaml = new BymlFileData();
             MemoryStream ms = new MemoryStream(dungeonStaticData);
             Yaz0 yaz = new Yaz0();
 
-            bool isyaz = IsYaz0(dungeonStaticData);
-
-            if (isyaz)
-            {
-                Stream s = yaz.Decompress(ms);
-                byaml = ByamlFile.LoadN(s);
-                s.Close();
-            }
-            else
-            {
-                byaml = ByamlFile.LoadN(ms);
-            }
+            Stream s = yaz.Decompress(ms);
+            BymlFileData byaml = ByamlFile.LoadN(s);
+            s.Close();
 
             ms.Close();
 
@@ -274,21 +264,17 @@ namespace BotwRandoLib
             // Save the modified byaml data
             byte[] dungeonData = ByamlFile.SaveN(byaml);
 
-            if (isyaz)
-            {
-                ms = new MemoryStream(dungeonData);
-                byte[] dungeonByamlData = yaz.Compress(ms).ToArray();
-                ms.Close();
-                dungeonSarcData.Files[dungeonPath] = dungeonByamlData;
-            }
-            else
-            {
-                dungeonSarcData.Files[dungeonPath] = dungeonData;
-            }
+            ms = new MemoryStream(dungeonData);
+            byte[] dungeonByamlData = yaz.Compress(ms).ToArray();
+            ms.Close();
+            dungeonSarcData.Files[dungeonPath] = dungeonByamlData;
 
             // Add the new map file size in the RSTB list
             string rstbPath = $"Map/CDungeon/{dungeonName}/{dungeonName}_{staticDynamic}.mubin";
-            LibHelpers.RstbFile(rstbPath, dungeonData.Length);
+
+            ms = new MemoryStream(dungeonData);
+            LibHelpers.RstbFile(rstbPath, ms, false);
+            ms.Close();
         }
 
         private static string[] RulesTextFile(string version)
@@ -390,7 +376,10 @@ namespace BotwRandoLib
                 Stream compressed = yaz.Compress(ms);
 
                 bootupSarcData.Files["GameData/savedataformat.ssarc"] = compressed.ToArray();
-                LibHelpers.RstbFile("GameData/savedataformat.sarc", newData.Length);
+
+                ms = new MemoryStream(newData);
+                LibHelpers.RstbFile("GameData/savedataformat.sarc", ms, false);
+                ms.Close();
 
                 byte[] newBootupFile = SARC.PackN(bootupSarcData).Item2;
                 File.WriteAllBytes(bootupFile, newBootupFile);
@@ -451,7 +440,10 @@ namespace BotwRandoLib
                 byte[] compressed = yaz.Compress(ms).ToArray();
 
                 bootupSarcData.Files["GameData/gamedata.ssarc"] = compressed;
-                LibHelpers.RstbFile("GameData/gamedata.sarc", newData.Length);
+
+                ms = new MemoryStream(newData);
+                LibHelpers.RstbFile("GameData/gamedata.sarc", ms, false);
+                ms.Close();
 
                 byte[] newBootupFile = SARC.PackN(bootupSarcData).Item2;
                 File.WriteAllBytes(bootupFile, newBootupFile);
@@ -518,7 +510,10 @@ namespace BotwRandoLib
             string fileName = Path.GetFileNameWithoutExtension(mapFile);
             string mapName = fileName.Split('_')[0];
             string rstbPath = $"Aoc/0010/Map/MainField/{mapName}/{fileName}.mubin";
-            LibHelpers.RstbFile(rstbPath, dungeonData.Length);
+
+            ms = new MemoryStream(dungeonData);
+            LibHelpers.RstbFile(rstbPath, ms, false);
+            ms.Close();
         }
 
         private static bool ShouldBeRandomized(string unitconfigname, Dictionary<string, bool> randomizationSettings)
@@ -684,7 +679,7 @@ namespace BotwRandoLib
         private static KeyValuePair<string, string> GetChestLootObject()
         {
             // Get a random value from a list if the object is found within said list
-            chestObjectsTable.ChestItems.Shuffle(random);
+            chestObjectsTable.ChestItems = chestObjectsTable.ChestItems.OrderBy(x => random.Next()).ToList();
             KeyValuePair<string, string> objectInList = chestObjectsTable.ChestItems[0];
             chestObjectsTable.ChestItems.Remove(objectInList);
             return objectInList;
