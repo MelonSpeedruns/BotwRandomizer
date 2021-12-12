@@ -218,7 +218,6 @@ namespace BotwRandoLib
                 "Weapon_Sword_035",
                 "Weapon_Sword_040",
                 "Weapon_Sword_041",
-                "Weapon_Sword_042",
                 "Weapon_Sword_043",
                 "Weapon_Sword_044",
                 "Weapon_Sword_047",
