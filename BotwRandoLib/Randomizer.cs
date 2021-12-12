@@ -463,8 +463,14 @@ namespace BotwRandoLib
                             botwObjects[j]["DataName"].StartsWith("Clear_Dungeon") ||
 
                             botwObjects[j]["DataName"].Equals("IsPlayed_Demo103_0") ||
-                            botwObjects[j]["DataName"].Equals("Demo042_0") ||
-                            botwObjects[j]["DataName"].Equals("Demo042_1") ||
+                            botwObjects[j]["DataName"].Equals("IsPlayed_Demo042_0") ||
+                            botwObjects[j]["DataName"].Equals("IsPlayed_Demo042_1") ||
+                            botwObjects[j]["DataName"].Equals("IsPlayed_Demo010_0") ||
+                            botwObjects[j]["DataName"].Equals("IsPlayed_Demo010_1") ||
+                            botwObjects[j]["DataName"].Equals("IsPlayed_Demo104_0") ||
+                            botwObjects[j]["DataName"].Equals("IsPlayed_Demo109_1") ||
+                            botwObjects[j]["DataName"].Equals("IsPlayed_Demo140_0") ||
+
                             botwObjects[j]["DataName"].Equals("MapTower_07") ||
                             botwObjects[j]["DataName"].Equals("MapTower_07_Demo") ||
                             botwObjects[j]["DataName"].Equals("Open_StartPoint") ||
@@ -691,6 +697,67 @@ namespace BotwRandoLib
                 RandomizeParameter("EquipItem3", ref actorParams);
                 RandomizeParameter("EquipItem4", ref actorParams);
                 RandomizeParameter("ArrowName", ref actorParams);
+            }
+
+            // Create Weaponed Lynel
+            if (unitConfigName.StartsWith("Enemy_Lynel"))
+            {
+                // Randomize Sword
+                if (!actorParams.ContainsKey("EquipItem1"))
+                    actorParams.Add("EquipItem1", "Weapon_Sword_001");
+                else
+                    actorParams["EquipItem1"] = "Weapon_Sword_001";
+
+                RandomizeParameter("EquipItem1", ref actorParams);
+
+                // Randomize Shield
+                if (!actorParams.ContainsKey("EquipItem2"))
+                    actorParams.Add("EquipItem2", "Weapon_Shield_001");
+                else
+                    actorParams["EquipItem2"] = "Weapon_Shield_001";
+
+                RandomizeParameter("EquipItem2", ref actorParams);
+
+                // Randomize Bow
+                if (!actorParams.ContainsKey("EquipItem3"))
+                    actorParams.Add("EquipItem3", "Weapon_Bow_001");
+                else
+                    actorParams["EquipItem3"] = "Weapon_Bow_001";
+
+                RandomizeParameter("EquipItem3", ref actorParams);
+
+                // Remove 4th Weapon
+                if (actorParams.ContainsKey("EquipItem4"))
+                    actorParams["EquipItem4"] = "Default";
+
+                // Randomize Arrow
+                if (!actorParams.ContainsKey("ArrowName"))
+                    actorParams.Add("ArrowName", "NormalArrow");
+                else
+                    actorParams["ArrowName"] = "NormalArrow";
+
+                RandomizeParameter("ArrowName", ref actorParams);
+            }
+            else if (unitConfigName.StartsWith("Enemy_Giant") || unitConfigName.StartsWith("Enemy_Golem") || unitConfigName.StartsWith("Enemy_Guardian"))
+            {
+                // Randomize Sword
+                if (actorParams.ContainsKey("EquipItem1"))
+                    actorParams["EquipItem1"] = "Default";
+
+                // Randomize Shield
+                if (actorParams.ContainsKey("EquipItem2"))
+                    actorParams["EquipItem2"] = "Default";
+
+                // Randomize Bow
+                if (actorParams.ContainsKey("EquipItem3"))
+                    actorParams["EquipItem3"] = "Default";
+
+                if (actorParams.ContainsKey("EquipItem4"))
+                    actorParams["EquipItem4"] = "Default";
+
+                // Randomize Arrow
+                if (actorParams.ContainsKey("ArrowName"))
+                    actorParams["ArrowName"] = "Default";
             }
         }
 

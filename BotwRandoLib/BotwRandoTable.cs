@@ -152,7 +152,6 @@ namespace BotwRandoLib
             ChestDropTable.Add(new KeyValuePair<string, string>("Weapon_Sword_035", ""), 4);
             ChestDropTable.Add(new KeyValuePair<string, string>("Weapon_Sword_040", ""), 4);
             ChestDropTable.Add(new KeyValuePair<string, string>("Weapon_Sword_041", ""), 4);
-            ChestDropTable.Add(new KeyValuePair<string, string>("Weapon_Sword_042", ""), 4);
             ChestDropTable.Add(new KeyValuePair<string, string>("Weapon_Sword_043", ""), 4);
             ChestDropTable.Add(new KeyValuePair<string, string>("Weapon_Sword_044", ""), 4);
             ChestDropTable.Add(new KeyValuePair<string, string>("Weapon_Sword_047", ""), 4);
@@ -273,7 +272,6 @@ namespace BotwRandoLib
             ChestDropTable.Add(new KeyValuePair<string, string>("Weapon_Shield_038", ""), 4);
             ChestDropTable.Add(new KeyValuePair<string, string>("Weapon_Shield_040", ""), 4);
             ChestDropTable.Add(new KeyValuePair<string, string>("Weapon_Shield_041", ""), 4);
-            ChestDropTable.Add(new KeyValuePair<string, string>("Weapon_Shield_042", ""), 4);
             ChestDropTable.Add(new KeyValuePair<string, string>("Weapon_Bow_001", ""), 4);
             ChestDropTable.Add(new KeyValuePair<string, string>("Weapon_Bow_002", ""), 4);
             ChestDropTable.Add(new KeyValuePair<string, string>("Weapon_Bow_003", ""), 4);
