@@ -410,14 +410,14 @@ namespace BotwRandoLib
 
             for (int i = 0; i < fileNames.Count; i++)
             {
-                if (fileNames[i].StartsWith("/revival_bool_data_"))
+                bool modified = false;
+
+                MemoryStream gdMs = new MemoryStream(gameDataSarcData.Files[fileNames[i]]);
+                BymlFileData gdByaml = ByamlFile.LoadN(gdMs);
+                gdMs.Close();
+
+                if (gdByaml.RootNode.ContainsKey("bool_data"))
                 {
-                    bool modified = false;
-
-                    MemoryStream gdMs = new MemoryStream(gameDataSarcData.Files[fileNames[i]]);
-                    BymlFileData gdByaml = ByamlFile.LoadN(gdMs);
-                    gdMs.Close();
-
                     dynamic botwObjects = gdByaml.RootNode["bool_data"];
                     for (int j = 0; j < botwObjects.Count; j++)
                     {
@@ -429,25 +429,89 @@ namespace BotwRandoLib
                             gdByaml.RootNode["bool_data"][j]["DataName"] = newActorName;
                             modified = true;
                         }
-                    }
 
-                    if (modified)
-                        gameDataSarcData.Files[fileNames[i]] = ByamlFile.SaveN(gdByaml);
+                        if (botwObjects[j]["DataName"].Equals("IsGet_AncientArrow") ||
+                            botwObjects[j]["DataName"].StartsWith("IsGet_Animal") ||
+                            botwObjects[j]["DataName"].StartsWith("IsGet_App") ||
+                            botwObjects[j]["DataName"].Equals("IsGet_BeeHome") ||
+                            botwObjects[j]["DataName"].Equals("IsGet_BombArrow_A") ||
+                            botwObjects[j]["DataName"].Equals("IsGet_ElectricArrow") ||
+                            botwObjects[j]["DataName"].Equals("IsGet_FireArrow") ||
+                            botwObjects[j]["DataName"].Equals("IsGet_IceArrow") ||
+                            (botwObjects[j]["DataName"].StartsWith("IsGet_Weapon") && !botwObjects[j]["DataName"].Contains("Weapon_Sword_070")) ||
+                            botwObjects[j]["DataName"].StartsWith("IsGet_Item") ||
+                            botwObjects[j]["DataName"].Equals("IsGet_NormalArrow") ||
+                            botwObjects[j]["DataName"].Equals("IsGet_KeySmall") ||
+
+                            botwObjects[j]["DataName"].Equals("IsGet_Obj_Camera") ||
+                            botwObjects[j]["DataName"].Equals("IsGet_Obj_IceMaker") ||
+                            botwObjects[j]["DataName"].Equals("IsGet_Obj_RemoteBomb") ||
+                            botwObjects[j]["DataName"].Equals("IsGet_Obj_StopTimer") ||
+                            botwObjects[j]["DataName"].Equals("IsGet_Obj_RemoteBombLv2") ||
+                            botwObjects[j]["DataName"].Equals("IsGet_Obj_StopTimerLv2") ||
+                            botwObjects[j]["DataName"].Equals("IsGet_Obj_Magnetglove") ||
+                            botwObjects[j]["DataName"].Equals("IsGet_Obj_Motorcycle") ||
+                            botwObjects[j]["DataName"].Equals("IsGet_Obj_Maracas") ||
+                            botwObjects[j]["DataName"].Equals("IsGet_Obj_AmiiboItem") ||
+                            botwObjects[j]["DataName"].Equals("IsGet_Obj_Album") ||
+                            botwObjects[j]["DataName"].Equals("IsGet_Obj_PictureBook") ||
+                            botwObjects[j]["DataName"].Equals("IsGet_Obj_FireWoodBundle") ||
+
+                            botwObjects[j]["DataName"].StartsWith("Guide") ||
+                            botwObjects[j]["DataName"].StartsWith("IsHelp") ||
+                            botwObjects[j]["DataName"].Equals("FirstTips") ||
+                            botwObjects[j]["DataName"].StartsWith("Clear_Dungeon") ||
+
+                            botwObjects[j]["DataName"].Equals("IsPlayed_Demo103_0") ||
+                            botwObjects[j]["DataName"].Equals("Demo042_0") ||
+                            botwObjects[j]["DataName"].Equals("Demo042_1") ||
+                            botwObjects[j]["DataName"].Equals("MapTower_07") ||
+                            botwObjects[j]["DataName"].Equals("MapTower_07_Demo") ||
+                            botwObjects[j]["DataName"].Equals("Open_StartPoint") ||
+                            botwObjects[j]["DataName"].Equals("IsPlayed_Demo164_0") ||
+                            botwObjects[j]["DataName"].Equals("IsPlayed_Demo166_0") ||
+                            botwObjects[j]["DataName"].Equals("IsPlayed_Demo042_0") ||
+                            botwObjects[j]["DataName"].Equals("IsPlayed_Demo042_1") ||
+                            botwObjects[j]["DataName"].Equals("MapTower_DemoFirst")
+                            )
+                        {
+                            gdByaml.RootNode["bool_data"][j]["InitValue"] = unchecked(1);
+                            modified = true;
+                        }
+                    }
                 }
 
-                byte[] newData = SARC.PackN(gameDataSarcData).Item2;
-                ms = new MemoryStream(newData);
-                byte[] compressed = yaz.Compress(ms).ToArray();
+                if (gdByaml.RootNode.ContainsKey("s32_data"))
+                {
+                    dynamic botwObjects = gdByaml.RootNode["s32_data"];
+                    for (int j = 0; j < botwObjects.Count; j++)
+                    {
+                        if (botwObjects[j]["DataName"].Equals("Location_MapTower07"))
+                        {
+                            gdByaml.RootNode["s32_data"][j]["InitValue"] = unchecked(1);
+                            modified = true;
+                        }
+                    }
+                }
 
-                bootupSarcData.Files["GameData/gamedata.ssarc"] = compressed;
-
-                ms = new MemoryStream(newData);
-                LibHelpers.RstbFile("GameData/gamedata.sarc", ms, false);
-                ms.Close();
-
-                byte[] newBootupFile = SARC.PackN(bootupSarcData).Item2;
-                File.WriteAllBytes(bootupFile, newBootupFile);
+                if (modified)
+                {
+                    gameDataSarcData.Files[fileNames[i]] = ByamlFile.SaveN(gdByaml);
+                }
             }
+
+            byte[] newData = SARC.PackN(gameDataSarcData).Item2;
+            ms = new MemoryStream(newData);
+            byte[] compressed = yaz.Compress(ms).ToArray();
+
+            bootupSarcData.Files["GameData/gamedata.ssarc"] = compressed;
+
+            ms = new MemoryStream(newData);
+            LibHelpers.RstbFile("GameData/gamedata.sarc", ms, false);
+            ms.Close();
+
+            byte[] newBootupFile = SARC.PackN(bootupSarcData).Item2;
+            File.WriteAllBytes(bootupFile, newBootupFile);
         }
 
         private static void OpenMainFieldMapFile(string mapFile, string mapType, Dictionary<string, bool> randomizationSettings)
