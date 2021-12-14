@@ -27,6 +27,7 @@ namespace BotwRandoLib
             List<string> chuchulist = GenerateChuchuList();
             List<string> littleGolemsList = GenerateLittleGolemList();
             List<string> subBossList = GenerateSubBossList();
+            List<string> lynelList = GenerateLynelList();
             List<string> enemyGuardList = GenerateEnemyGuardList();
             List<string> enemyGuardAmbushList = GenerateEnemyGuardAmbushList();
             List<string> enemyTreehouseGuardList = GenerateEnemyTreeHouseGuardList();
@@ -63,6 +64,7 @@ namespace BotwRandoLib
             objectList.Add(keeseAllDayList, false);
             objectList.Add(chuchulist, false);
             objectList.Add(littleGolemsList, false);
+            objectList.Add(lynelList, false);
             objectList.Add(subBossList, false);
             objectList.Add(enemyGuardList, false);
             objectList.Add(enemyGuardAmbushList, false);
@@ -91,6 +93,18 @@ namespace BotwRandoLib
             objectList.Add(mineralList, false);
 
             return objectList;
+        }
+
+        private static List<string> GenerateLynelList()
+        {
+            return new List<string>()
+            {
+                "Enemy_Lynel_Dark",
+                "Enemy_Lynel_Junior",
+                "Enemy_Lynel_Middle",
+                "Enemy_Lynel_Senior",
+                "Enemy_Lynel_Gold"
+            };
         }
 
         private static List<string> GenerateSpearList()
@@ -399,15 +413,9 @@ namespace BotwRandoLib
                 "Enemy_Golem_Junior",
                 "Enemy_Golem_Middle",
                 "Enemy_Golem_Senior",
-                "Enemy_Giant_Bone_AllDay",
                 "Enemy_Giant_Junior",
                 "Enemy_Giant_Middle",
                 "Enemy_Giant_Senior",
-                "Enemy_Lynel_Dark",
-                "Enemy_Lynel_Junior",
-                "Enemy_Lynel_Middle",
-                "Enemy_Lynel_Senior",
-                "Enemy_Lynel_Gold",
                 "Enemy_Guardian_A"
             };
         }
