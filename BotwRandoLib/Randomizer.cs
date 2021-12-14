@@ -198,10 +198,8 @@ namespace BotwRandoLib
 
         private static void OpenDungeonPackFile(string dungeonFile, string mapType, Dictionary<string, bool> randomizationSettings)
         {
-            SarcData dungeonSarcData;
-
             FileStream fs = File.OpenRead(dungeonFile);
-            dungeonSarcData = SARC.UnpackRamN(fs);
+            SarcData dungeonSarcData = SARC.UnpackRamN(fs);
             fs.Close();
 
             string dungeonName = Path.GetFileNameWithoutExtension(dungeonFile);
@@ -212,8 +210,8 @@ namespace BotwRandoLib
             RandomizeDungeon(ref dungeonSarcData, dynamicDungeonPath, "Dynamic", dungeonName, "CDungeon", randomizationSettings);
 
             // Save the modified dungeon file as a file
-            byte[] decompressedData = SARC.PackN(dungeonSarcData).Item2;
-            File.WriteAllBytes(dungeonFile, decompressedData);
+            Tuple<int, byte[]> decompressedData = SARC.PackN(dungeonSarcData);
+            File.WriteAllBytes(dungeonFile, decompressedData.Item2);
         }
 
         private static bool IsYaz0(byte[] fileData)
@@ -228,8 +226,10 @@ namespace BotwRandoLib
             MemoryStream ms = new MemoryStream(dungeonStaticData);
             Yaz0 yaz = new Yaz0();
 
+            BymlFileData byaml;
+
             Stream s = yaz.Decompress(ms);
-            BymlFileData byaml = ByamlFile.LoadN(s);
+            byaml = ByamlFile.LoadN(s);
             s.Close();
 
             ms.Close();

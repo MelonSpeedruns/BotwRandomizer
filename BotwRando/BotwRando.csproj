@@ -6,11 +6,14 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationIcon>icon.ico</ApplicationIcon>
+	<ProduceReferenceAssembly>false</ProduceReferenceAssembly>
     <LangVersion>preview</LangVersion>
-	  <PublishSingleFile>true</PublishSingleFile>
+	<PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <PublishReadyToRun>true</PublishReadyToRun>
+	<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
   </PropertyGroup>
-  
-
   
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -29,6 +32,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BotwRandoLib\BotwRandoLib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="LICENSE">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
