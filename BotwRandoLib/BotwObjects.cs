@@ -107,6 +107,14 @@ namespace BotwRandoLib
             };
         }
 
+        private static List<Tuple<int, string>> GenerateChestList()
+        {
+            return new List<Tuple<int, string>>()
+            {
+                new Tuple<int, string>(32587423, "This one chest at this location"),
+            };
+        }
+
         private static List<string> GenerateSpearList()
         {
             return new List<string>

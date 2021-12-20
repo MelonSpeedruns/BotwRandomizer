@@ -176,8 +176,6 @@ namespace BotwRandoLib
 
                 progress++;
 
-                Console.WriteLine(currentChestCount);
-
                 // Change the size of all modified files in the RSTB of the graphic pack
                 LibHelpers.RstbFiles(gfxPackRstbFile);
 
@@ -769,7 +767,7 @@ namespace BotwRandoLib
 
                         if (overworldObjectsTable.OverworldObjects.ElementAt(i).Value == true)
                         {
-                            overworldObjectsTable.OverworldObjects.Remove(overworldObjectsTable.OverworldObjects.ElementAt(i).Key);
+                            overworldObjectsTable.OverworldObjects.ElementAt(i).Key.Remove(newObject);
                         }
 
                         return newObject;
