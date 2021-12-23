@@ -43,6 +43,8 @@ namespace BotwRandoLib
         {
             if (String.IsNullOrWhiteSpace(seed)) seed = GenerateSeed();
 
+            if (randomizationSettings == null) randomizationSettings = new Dictionary<string, bool>();
+
             random = new Random(unchecked((int)Crc32.Compute(seed)));
 
             progress = 0;

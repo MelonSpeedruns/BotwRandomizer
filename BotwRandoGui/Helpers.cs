@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace BotwRando
+namespace BotwRandoGui
 {
     /// <summary>
     /// Class having various helper functions.

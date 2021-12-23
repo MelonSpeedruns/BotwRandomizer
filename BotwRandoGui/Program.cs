@@ -1,4 +1,4 @@
-namespace BotwRando
+namespace BotwRandoGui
 {
     internal static class Program
     {

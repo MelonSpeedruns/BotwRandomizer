@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace BotwRando
+namespace BotwRandoGui
 {
     public class SettingsFile
     {

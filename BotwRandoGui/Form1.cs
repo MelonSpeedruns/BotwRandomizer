@@ -3,7 +3,7 @@ using Ookii.Dialogs.WinForms;
 using System.ComponentModel;
 using System.Reflection;
 
-namespace BotwRando
+namespace BotwRandoGui
 {
     public partial class Form1 : Form
     {
