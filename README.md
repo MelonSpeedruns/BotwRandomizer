@@ -18,8 +18,6 @@ Head over to the [Releases](https://github.com/MelonSpeedruns/BotwRandomizer/rel
 
 If the app doesn't launch for you when double clicking it, then you might be missing the latest [.NET Desktop Runtime 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
-If you have any questions about the Randomizer, please ask them in our [Official Discord Server](https://discord.gg/vPPsreP4Ng).
-
 The BOTW Randomizer expects you to have an extracted copy of the Wii U version of BOTW, including the following:
 - The base game
 - The latest update (1.5.0)
